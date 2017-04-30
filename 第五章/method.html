@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+		// [1,3,4,5].every(function myfunction (i) {
+		// 	// body... 
+
+		// });
+	//var ar = [22, 11, 13, 59, 41];
+        //var ar = [12, 10, 50, 42, 22];
+        // var ar = [23, 11, 13, 21, 41];
+
+        //var result = ar.every(function (item, index, array) {
+        //    console.log("item:"+item, "index:"+index,"array:"+array);
+        //    return item % 2 == 0;
+        //});
+        //console.log(result); //false
+        function isBigEnough(element, index, array) {
+            return (element >= 10);
+         }
+         
+         var passed = [12, 5, 8, 130, 44].every(isBigEnough);
+         document.write("First Test Value : " + passed ); 
+         
+         passed = [12, 54, 18, 130, 44].every(isBigEnough);
+         document.write("Second Test Value : " + passed );
+        // var result = ar.some(function (item, index, array) {
+        //    console.log("item:" + item, "index:" + index, "array:" + array);
+        //    return item % 2 == 0;
+        // });
+        // console.log(typeof result);  //true
+
+        //===================================
+        //var ar = [13, 10, 50, 42, 21];
+
+        //var result = ar.filter(function (item, index, array) {
+        //    console.log("item:" + item, "index:" + index, "array:" + array);
+        //    return item % 2 == 0;
+        //});
+        //console.log(result);  //array
+        //===================================
+        //var ar = [1, 3, 5, 7, 9];
+
+        //var result = ar.map(function (item, index, array) {
+        //    //console.log("item:" + item, "index:" + index, "array:" + array);
+        //    return item*item;
+        //});
+        //console.log(result);  //array
+        //======================================
+       // var ar = [1, 3, 5, 7, 9];
+
+       //   ar.forEach(function (item, index, array) {
+       //      console.log("item:" + item, "index:" + index, "array:" + array);
+       //   });
+</script>
+</body>
+</html>

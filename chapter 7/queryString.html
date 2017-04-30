@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<a href="?a=b&c=d#bookmark">go to bookmark</a>
+    <script>
+        
+        console.log("search = " + location.search)//?a=b&c=d
+
+        var queryString = location.search.substring(1);
+        console.log(queryString);//a=b&c=d
+
+
+        var items = queryString.split("&");//string->array
+        //console.log(items);   //array
+
+        for (var i in items) {
+            //console.log(items[i]);//a=b c=d
+            var data = items[i].split("="); 
+            for (var j in data) {
+                console.log(data[j]);   //a b c d
+            }
+        }
+
+
+</script><body>
+</html>

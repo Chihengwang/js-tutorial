@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- <ul>
+	<li>item1</li>
+	<li>item2</li>
+	<li>item3</li>
+	<li>item4</li>
+</ul> -->
+<!-- <input type="button" value="test_function" onclick="myfunction()" id=button1> -->
+<input type="button" value="test_function" id=button1>
+
+<script type="text/javascript">
+	// var ul=document.querySelector("ul");
+	// console.log(ul.childNodes);
+	// console.log(ul.children);
+
+	// console.log(ul.firstChild);
+	// console.log(ul.firstElementChild);
+	// console.log(ul.firstElementChild.nextElementSibling);
+	// for (var i = 0; i < ul.children.length; i++) {
+	// 	console.log(ul.children[i].textContent);
+	// }
+	// ul =document.createElement("ul");
+	// document.body.appendChild(ul);
+
+	// for (var i = 0; i < 4; i++) {
+	// var li=document.createElement("li");
+	// li.textContent="item"+i;
+	// ul.appendChild(li);
+	// }
+	// li.textContent="item1";
+	// ul.appendChild(li);
+	var button1=document.getElementById("button1");
+	button1.onclick=myfunction;
+	//這邊要注意他傳進去的是function 而不是myfunction()
+	function myfunction () {
+		// body... 
+		console.log(1);
+		console.log(2);
+	}
+</script>
+</body>
+</html>

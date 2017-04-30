@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- <input type="button" id="button1" value="button1" onclick="myfunction(event);"> -->
+<input type="button" id="button2" value="button2">
+<input type="button" id="button3" value="button3">
+<script type="text/javascript">
+	// document.getElementById("button2").onclick=myfunction;
+	// document.getElementById("button3").addEventListener("click",myfunction);
+	document.body.onclick=myfunction;
+
+	function myfunction (e) {
+		// body...
+		// console.log(e);
+		console.log(this);//onclick指向body
+		console.log(e.target);//真正觸發的事件
+		console.log(e.currentTarget);
+	}
+</script>
+</body>
+</html>

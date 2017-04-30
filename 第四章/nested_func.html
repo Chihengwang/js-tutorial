@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function parent() {
+            var x = 1;
+            function child() {
+                var y = 1;
+                console.log("x = " + x);
+            }
+            child();//the scope of y just in the function child();
+            //console.log("y = " + y); //Error
+        }
+        parent();
+        //console.log("x = " + x); //Error
+        child(); //Error
+</script>
+</body>
+</html>

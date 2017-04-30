@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	// function sayHi(){
+	// 	document.write("hi");
+	// }
+	// function sayHi(name){
+	// 	document.write("Hi "+name+"<br>");
+	// }
+	// sayHi();//it'll run the function with the augment, so it show js can't support overloadding.
+	//============================================================================
+//function sayHi() {
+        //    document.write("Hi");
+        //}
+
+        //function sayHi(name) {
+        //    document.write("Hi, " + name +"<br>");
+        //}
+        //sayHi();
+        //=============================
+    
+        function sayHi() {           
+           console.log(arguments[0]);  //"ray"
+           console.log(arguments.length);  //2
+           //document.write("Hi, " + name + "<br>");
+        }
+        sayHi("ray","vivid");
+        //=============================
+        //function sayHi(name) {
+        //    if (name==undefined) {
+        //        document.write("Hi<br>");
+        //    }else{
+        //        document.write("Hi, " + name + "<br>");
+        //    }
+        //}
+        //sayHi();
+        //sayHi("ray");
+        //=============================
+        function sayHi() {
+            if (arguments.length == 0) {
+                document.write("Hi<br>");
+            } else {
+                document.write("Hi, " + arguments[0] + "<br>");
+            }
+        }
+        sayHi();
+        sayHi("ray");
+        
+        //========================================================
+        //ES5 給予初始值
+  //       function sayHi(name){
+  //       	//if(name==undefined) name="noname";
+  //       	name=name||"noname";
+		// document.write("hi "+name+"<br>");
+		// }
+		//============================================================
+		//Es6 可以直接在參數給予預設值
+		// function sayHi (name="noname") {
+		// 	// body... 
+		// 	document.write("Hi "+name+"<br>");
+
+		// }
+		// sayHi();
+		// sayHi("ray");
+</script>
+</body>
+</html>

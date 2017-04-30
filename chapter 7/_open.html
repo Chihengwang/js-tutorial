@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="button" id="button1" value="open">
+<input type="button" id="button2" value="moveto">
+<input type="button" id="button3" value="moveby">
+
+<script type="text/javascript">
+	var win;
+	document.getElementById("button1").onclick=function(){
+		win=window.open("event3.html",null,"width=300,height=300").target(_self);
+	}
+	document.getElementById("button2").onclick=function(){
+		win=window.moveto(100,100);
+	}
+	document.getElementById("button3").onclick=function(){
+		win=window.moveby(100,100);
+	}		
+</script>
+</body>
+</html>

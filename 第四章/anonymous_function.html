@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<!--<input type="button" id="button1" value="button1" />
+    <script>
+        document.getElementById("button1").onclick = function () {
+            alert(this.value);
+        };
+    </script>-->
+<script type="text/javascript">
+	// print(getUserName) {
+        //    return "Hello , " + getUserName();
+        //}
+        //var result = print(myfunction);
+        //console.log(result);   //Hello , Mary
+
+        //function myfunction() {
+        //    return "Mary"
+        //}
+        //=========================================
+        //callback function 
+        function print(getUserName) {
+            return "Hello , " + getUserName();
+        }
+        function print2(getUserName) {
+            return "Hello , " + getUserName;
+        }
+        // var result = print(function () {
+        //     return "Mary";//argument of the print function give the function.
+        // });
+        // console.log(result);   //Hello , Mary
+        function myfunction () {
+            // body... 
+            return "Mary";
+        }
+
+        var result2 = print(myfunction);
+        console.log(result2);//if i wanna use the myfunction, argument here can't be put myfunction(),or it would put the string "Mary" in the function "print"
+        // var a=function(){return "Mary";}//using function_expression can be supported.
+        // var result3 = print(a);
+        // console.log(result3);
+
+</script>
+
+</body>
+</html>

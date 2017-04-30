@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	//function add(i) {
+        //    var result = 0;
+        //    result += i;
+        //    console.log(result);
+        //}
+
+        //add(10);    //10
+        //add(20);    //20
+        //add(30);    //30
+        //=============================
+        //var result = 0;
+        //function add(i) {
+        //    result += i;
+        //    console.log(result);
+        //}
+
+        //add(10);    //10
+        //add(20);    //30
+        //add(30);    //60
+        ////=============================
+        //function myfunction() {
+        //    var result = 0;
+        //    function add(i) {
+        //        result += i;
+        //        console.log(result);
+        //    }
+
+        //    add(10);    //10
+        //    add(20);    //30
+        //    add(30);    //60
+        //}
+
+        //myfunction();
+        ////=============================
+        ////closure
+        //function myfunction() {
+        //    var result = 0;
+        //    function add(i) {
+        //        result += i;
+        //        console.log(result);
+        //    }
+        //    return add;
+        
+        //}
+
+        //var add = myfunction();
+
+        //add(10);    //10
+        //add(20);    //30
+        //add(30);    //60
+        //=============================
+        //closure
+        //function myfunction() {
+        //    var result = 0;           
+        //    return function (i) {
+        //        result += i;
+        //        console.log(result);
+        //    };
+
+        //}
+
+        //var add = myfunction();
+
+        //add(10);    //10
+        //add(20);    //30
+        //add(30);    //60
+
+
+
+        // function myfunction(result) {          
+        //     return function (i) {
+        //         result += i;
+        //         console.log(result);
+        //     };
+
+        // }
+
+        // var add = myfunction(100);
+
+        // add(10);    //110
+        // add(20);    //130
+        // add(30);    //160
+        // // console.log(result);
+        // var add2 = myfunction(200);//environment would be seperated.
+
+        // add2(10);    //210
+        // add2(20);    //230
+        // add2(30);    //260
+        //==========================================================
+        var add=(function myfunction(result) {          
+            return function (i) {
+                result += i;
+                console.log(result);
+            };
+
+        })(100);
+        add(10);    //110
+        add(20);    //130
+        add(30);    //160
+        //用立即運算式搭配函式運算式使用。
+</script>
+</body>
+</html>

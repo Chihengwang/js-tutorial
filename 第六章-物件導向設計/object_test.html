@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	//========================================================
+	//use object literal notation
+	// var employee={
+	// 	"empName": "Mary",
+	// 	"age": 29
+	// };
+	// console.log("Employee name: "+employee.empName);
+	// console.log("Employee age: "+employee.age);
+	//========================================================
+	//use new to create new object
+	// var employee=new Object();
+	// employee.empName="Mary";
+	// employee.age=29;
+	// employee["married"]=true;
+	// console.log("Employee name: "+employee.empName);
+	// console.log("Employee age: "+employee.age);
+	// console.log("is married:"+employee["married"]);
+	//========================================================
+	//use Object.defineProperty(objectName,"dataName",{Data property})
+	// var employee={}
+	// Object.defineProperty(employee,"empName",{
+	// 	writable: false,
+	// 	value: "Mary"
+	// });
+	// console.log(employee.empName);
+	// employee.empName="Candy";
+	// console.log(employee.empName);//mary-->which means writable can control whether empName could be revised or not.
+	//===============================================================
+	//inside the object, you could define the method in that.
+	// var employee=new Object();
+	// employee.empName="Mary";
+	// employee.age=29;
+	// employee.getAge=function() {
+	// 	// body... 
+	// 	return this.age;
+	// };
+	// console.log("Employee name: "+employee.empName);
+	// console.log("Employee age: "+employee.age);
+	// console.log("Employee age:"+employee.getAge());
+	//===============================================================
+	//be careful about "this"
+	// window.empName="Candy";
+	// var employee={empName:"Mary"};
+	// function getName(){
+	// 	return this.empName;
+	// }
+	// alert(getName());//this-->window 看function 前面的物件是甚麼 沒指定就是全域變數代表指向window
+	// employee.getEmployeeName=getName;
+	// alert(employee.getEmployeeName());//getEmployeeName-->前面指向employee所以this 會指向employee.
+	//================================================================
+	//兩個方法解決 想要建構相同的物件 way1.Factory
+	// var a=0;
+	// function createEmployee (empName,age) {
+	// 	// body... 
+	// 	var employee=new Object();
+	// 	employee.empName=empName;
+	// 	employee.age=age;
+	// 	employee.getage=function () {
+	// 		/* body... */
+	// 		return this.age;
+	// 	};
+	// 	return employee;
+	// }
+	// var emp1=createEmployee("Mary",30);
+	// var emp2=createEmployee("Candy",20);//有各自的作用域 不會被影響。
+	// console.log("Employee name: "+emp1.empName);
+	// console.log("Employee age: "+emp1.age);
+	// console.log("Employee age: "+emp1.getage());
+	// console.log("Employee name: "+emp2.empName);
+	// console.log("Employee age: "+emp2.age);
+	// console.log("Employee age: "+emp2.getage());
+	//==================================================================
+	//使用建構函式
+	// var Employee =function (empName,age) {
+	// 	/* body... */
+	// 	this.empName=empName;
+	// 	this.age=age;
+	// 	// this.getAge=function () {
+	// 	// 	 body... 
+	// 	// 	return this.age;
+
+	// 	// };
+	// }
+	// Employee.prototype={
+	// 	// constructor: Employee,
+	// 	companyName: "UCOM",
+	// 	getAge:function(){
+	// 		return this.age;
+	// 	}
+	// }
+	// var emp1=new Employee("Mary",30);
+	// var emp2=new Employee("Candy",30);
+	// console.log("Employee name: "+emp1.empName);
+	// console.log("Employee age: "+emp1.age);
+	// console.log("Employee age: "+emp1.getAge());
+	// console.log("Employee name: "+emp2.empName);
+	// console.log("Employee age: "+emp2.age);
+	// console.log("Employee age: "+emp2.getAge());
+	//=================================================================
+	
+	//================================================================
+	// use Accessor Property
+	// var Employee=function (name,age) {
+	// 	/* body... */
+	// 	var _empName,_age;
+	// 	Object.defineProperty(this,"empName",{
+	// 		get :function(){
+	// 			return _empName;
+	// 		},
+	// 		set: function (newName) {
+	// 			/* body... */
+	// 			_empName=newName;
+	// 		}
+
+	// 	});
+	// 	Object.defineProperty(this,"age",{
+	// 		get:function () {
+	// 			 // body... 
+	// 			return _age;
+	// 		},
+	// 		set:function (newAge) {
+	// 			/* body... */
+	// 			if(newAge >0 && newAge<150){
+	// 				_age=newAge;
+	// 			}
+	// 		}
+	// 	});
+	// 	this.empName=name;
+	// 	this.age=age;
+	// };
+	// var emp1=new Employee("Mary",30);
+
+	// console.log(emp1.empName);
+	// console.log(emp1.age);
+	//================================================
+// 	function Super() {}
+ 
+// function Sub() {}
+// Sub.prototype = new Super();
+// Sub.prototype.constructor = Sub;
+ 
+// var sub = new Sub();
+ 
+// console.log(Sub.prototype.constructor === Sub); // ② true
+// console.log(sub.constructor === Sub); // ④ true
+// console.log(sub.__proto__ === Sub.prototype); // ⑤ true
+// Sub.prototype.__proto__ == Super.prototype; // ⑦ true
+//===============================================
+	// var Employee=function (empName,age) {
+	// 	/* body... */
+	// 	this.empName=empName;
+	// 	this.age=age;
+	// }
+	// Employee.prototype.getAge = function(){
+	// 	// body... 
+	// 	return this.age;
+	// };
+	// var Sale=function (empName,age,bonus) {
+	// 	/* body... */
+	// 	Employee.call(this,empName,age);
+	// 	// Employee(empName,age);
+
+	// 	this.bonus=bonus;
+	// }
+
+	// Sale.prototype=new Employee();
+	// Sale.prototype.constructor= Sale;
+
+	// var aSale=new Sale("Mary",30,1000);
+	// console.log(aSale.empName);
+	// console.log(aSale.age);
+	// console.log(aSale.getAge());
+	// console.log(aSale.bonus);
+	//======================================================
+	// class Employee{
+	// 	#_empName,#_age;
+	// 	constructor(empName=0,age=0){
+			
+	// 		#_empName=empName;
+	// 		#_age=age;
+
+	// 	}
+	// 	get Name(){return #_empName};
+	// 	get Age(){return #_age};
+		
+
+	// }
+	// class Sale extends Employee{
+	// 	#_bonus;
+	// 	constructor(empName=0,age=0,bonus=0){
+	// 		super(empName,age);
+			
+	// 		#_bonus=bonus;
+
+	// 	}
+	// 	// get Bonus(){return _bonus};
+	// };
+	// var aSale=new Sale("Mary",30,1000);
+	// console.log(aSale.Name);
+	// console.log(aSale.Age);
+	// console.log(aSale.Name);
+	// // console.log(aSale.getBonus());
+	class Foo {
+  #a;
+  #b;
+  #sum() { return #a + #b; }
+  printSum() { console.log(#sum()); }
+  constructor(a, b) { #a = a; #b = b; }
+}
+ var foo=new Foo(2,3);
+ console.log(foo.sum);
+
+
+
+</script>
+</body>
+</html>

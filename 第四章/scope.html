@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var i = 10;
+
+        function myfunction() {
+           var j = 20;
+           console.log(i, j);   //10,20
+
+           if (true) { //block
+               // var m = 30; //es5 會被提到最上面做宣告
+               let m = 30; //es6 但是let不會 只會在block裡面
+               //console.log(i,j,m);
+           }
+
+           console.log(i, j, m);
+        }
+
+        myfunction();
+
+        console.log(i);
+        console.log(j);
+
+        //===============================================
+        //var i = 1;
+        //function myfunction() {
+        //    var i = 10;
+        //    console.log(i); //10
+        //}
+        //myfunction();
+        ////var i = 2;
+        //console.log(i); //1
+	</script>
+</body>
+</html>

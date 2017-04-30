@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="button" id="button1" value="0">
+<script type="text/javascript">
+	document.getElementById("button1").onclick=function () {
+		/* body... */
+		var self=this;
+		var i =setInterval(function () {
+			/* body... */
+			++self.value;
+		},1000);
+	};
+</script>
+</body>
+</html>

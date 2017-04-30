@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function sayhi(name) {
+			// body...
+			document.write("Hi "+name+"<br>");
+		}
+		sayhi("ray");
+		sayhi();//cause we don't give any augments, it'll show up "undefined"
+		var result=sayhi("vivid");//our function didn't return anything, so we get nothing,thus it'll show "undefined,too"
+		function add(i,j){
+			return i+j;
+		}
+		var result =add(10, 20);//if I give another variable which have already been used above,it'll cover the variable that contain.
+		console.log(result);
+	</script>
+</body>
+</html>

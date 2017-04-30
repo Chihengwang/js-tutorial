@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	//console.log(1);
+        //console.log(2);
+        //========================
+        //console.log(1);
+        //(function () {
+        //    console.log(2);
+        //})();
+        //===========================
+        //var i = 10; //global
+        //(function () {
+        //    var j = 100; //local
+        //    console.log(j);
+        //})();
+        //console.log(i);
+        //console.log(j);//it would fail,cause j have already been considered the local var.
+          //===========================
+        //another way to use immediately invoked functions.
+        var i = 10; //global
+        (function () {
+           var i = 100; //local
+           console.log(i); //100
+        }());
+        console.log(i); //10
+        //===========================
+        // var i = 10; //global
+        // +function () {
+        //     var i = 100; //local
+        //     console.log(i); //100
+        // }();
+        // console.log(i); //10
+</script>
+</body>
+</html>
